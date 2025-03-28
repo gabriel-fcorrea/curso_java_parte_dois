@@ -1,7 +1,5 @@
 package entities;
 
-import java.util.Scanner;
-
 public class Product {
 
 	public String name;
@@ -12,19 +10,17 @@ public class Product {
 		return quantity * price;
 	}
 
-	public void addProducts() {
-		Scanner sc = new Scanner(System.in);
-		System.out.print("Nome: ");
-		name = sc.nextLine();
-		System.out.print("Preço: ");
-		price = sc.nextDouble();
-		System.out.print("Quantidade: ");
-		quantity = sc.nextInt();
-		sc.close();
+	public void addProducts(int quantity) {
+		this.quantity += quantity;
 	}
 
 	public void removeProducts(int quantity) {
+		this.quantity -= quantity;
+	}
 
+	public String toString() {
+		return "Dados do produto: " + name + ", R$ " + String.format("%.2f", price) + ", " + quantity
+				+ " unidades. Total: " + String.format("%.2f", totalValueInStock());
 	}
 
 }

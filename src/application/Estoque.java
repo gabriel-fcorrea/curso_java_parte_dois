@@ -10,20 +10,42 @@ public class Estoque {
 
 		Scanner sc = new Scanner(System.in);
 
-		Product x, y, z;
-		x = new Product();
-		y = new Product();
-		z = new Product();
+		Product x = new Product();
 
 		System.out.println("Insira as informações do produto abaixo:");
-		x.addProducts();
-		x.totalValueInStock();
-//		y.addProducts();
-//		y.totalValueInStock();
-//		z.addProducts();
-//		z.totalValueInStock();
+		System.out.print("Nome: ");
+		x.name = sc.nextLine();
+		System.out.print("Preço: ");
+		x.price = sc.nextDouble();
+		System.out.print("Quantidade: ");
+		x.quantity = sc.nextInt();
 
-		System.out.printf("A valor total é R$ %.2f%n", x.totalValueInStock());
+		System.out.println(x);
+
+		char opcao;
+		do {
+			System.out.println("O que deseja fazer? \n1. Adicionar uma quantidade \n2. Remover uma quantidade");
+			int y = sc.nextInt();
+			int z;
+			switch (y) {
+			case 1:
+				System.out.print("Quantidade a adicionar: ");
+				z = sc.nextInt();
+				x.addProducts(z);
+				System.out.println();
+				System.out.println(x);
+				break;
+			case 2:
+				System.out.print("Quantidade a remover: ");
+				z = sc.nextInt();
+				x.removeProducts(z);
+				System.out.println();
+				System.out.println(x);
+				break;
+			}
+			System.out.println("Deseja alterar a quantidade? (S/N)");
+			opcao = sc.next().charAt(0);
+		} while (opcao == 's' || opcao == 'S');
 
 		sc.close();
 	}

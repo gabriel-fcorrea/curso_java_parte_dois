@@ -2,9 +2,10 @@ package util;
 
 public class CurrencyConverter {
 
-	public static final double DOLLAR = 5.76;
+	public static final double IOF = 1.06;
 
-	public static double dollarPrice(double dollarBought) {
-		return dollarBought * DOLLAR;
+	public static double dollarConversor(double dollarBought, double dollarPrice) {
+		return (dollarBought * dollarPrice) * IOF;
 	}
+
 }

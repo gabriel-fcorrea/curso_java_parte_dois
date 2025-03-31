@@ -10,14 +10,15 @@ public class Exercicio4 {
 
 		Scanner sc = new Scanner(System.in);
 
-		System.out.printf("The current Dollar price is %.2f%n", CurrencyConverter.DOLLAR);
+		System.out.print("What's the dollar price? ");
+		double x = sc.nextDouble();
+
 		System.out.print("How many dollars will be bought? ");
+		double y = sc.nextDouble();
 
-		double dollarBought = sc.nextDouble();
+		double total = CurrencyConverter.dollarConversor(x, y);
 
-		double result = CurrencyConverter.dollarPrice(dollarBought);
-
-		System.out.printf("Amount to be paid in reais = R$ %.2f%n", result);
+		System.out.printf("Amount to be paid in reais = R$ %.2f%n", total);
 
 		sc.close();
 	}

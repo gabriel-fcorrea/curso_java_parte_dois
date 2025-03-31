@@ -10,15 +10,19 @@ public class Estoque {
 
 		Scanner sc = new Scanner(System.in);
 
-		Product x = new Product();
-
 		System.out.println("Insira as informações do produto abaixo:");
 		System.out.print("Nome: ");
-		x.name = sc.nextLine();
+		String name = sc.nextLine();
 		System.out.print("Preço: ");
-		x.price = sc.nextDouble();
-		System.out.print("Quantidade: ");
-		x.quantity = sc.nextInt();
+		double price = sc.nextDouble();
+		Product x = new Product(name, price);
+
+		// UTILIZAÇÃO DO MÉTODO PARA ALTERAÇÃO DE UM ATRIBUTO APÓS ENCAPSULAMENTO
+		x.setName("Computer");
+		System.out.println("Updated name: " + x.getName());
+
+		x.setPrice(1200);
+		System.out.println("Updated price: " + x.getPrice());
 
 		System.out.println(x);
 

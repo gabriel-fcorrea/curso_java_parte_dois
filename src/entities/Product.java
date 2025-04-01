@@ -7,6 +7,16 @@ public class Product {
 	private double price;
 	private int quantity;
 
+	// CONSTRUTOR GERADO PELO ECLIPSE (SOURCE)
+	public Product(int quantity) {
+		this.quantity = quantity;
+	}
+
+	// GETTER GERADO PELO ECLIPSE
+	public int getQuantity() {
+		return quantity;
+	}
+
 	// CONSTRUTOR PARA OBRIGAR A INSERÇÃO DE DADOS:
 	public Product(String name, double price, int quantity) {
 		// this - referencia o atributo do objeto e não o parâmetro do método
